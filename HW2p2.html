@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btn(){
+            var number1, number2, number3, n1, n2, n3, sum;
+            number1 = document.forms["myform"].elements["num1"].value;
+            number2 = document.forms["myform"].elements["num2"].value;
+            number3 = document.forms["myform"].elements["num3"].value;
+
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            sum = n1 + n2 + n3;
+            document.forms["myform"].elements["result"].value = ("There are 3 numbers you just entered " + n1 + ", " + n2 + ", " + n3 + "\nThe sum of the integers was " + sum); }
+
+        function btn1(){
+            var number1, number2, number3, n1, n2, n3, avg;
+            number1 = document.forms["myform"].elements["num1"].value;
+            number2 = document.forms["myform"].elements["num2"].value;
+            number3 = document.forms["myform"].elements["num3"].value;
+
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            avg = (n1 + n2 + n3)/3;
+            document.forms["myform"].elements["result"].value = ("There are 3 numbers you just entered " + n1 + ", " + n2 + ", " + n3 + "\nThe sum of the integers was " + avg); }
+        
+
+        
+    </script>
+</head>
+<body>
+    <h2>Find Sum, average, largest, smallest of 3 numbers</h2>
+    <p>Enter your numbers</p>
+    <section class="body">
+        <form name="myform">
+        <table>
+        <tr>
+        <td>First Number:</td>
+        <td><input type="text" name="num1"></td>
+        </tr>
+        <tr>
+        <td>Second Number:</td>
+        <td><input type="text" name="num2"></td>
+        </tr>
+        <td>Third Number:</td>
+        <td><input type="text" name="num3"></td>
+        </tr>
+        </table>
+        <br> Results:
+        <textarea rows="5" cols="50" name="result">
+        </textarea>
+        <br><br>
+        <input type="button" onclick="btn()" value="SUM">
+        <input type="button" onclick="btn1()" value="AVERAGE">
+        <input type="reset" value="RESET">
+        </form>
+        </section>
+    <!-- <button onclick="btn2()" id="btn2">Avg</button> -->
+    <!-- <input type="button" onclick="btn()" value="SUBMIT"> -->
+</body>
+</html>
