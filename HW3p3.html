@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //Change C to F
+        function CtF(){
+            var number, f;
+            number = document.forms["myform"].elements["num"].value;
+            n = parseFloat(number);
+            if (number == '' || isNaN(number)){
+                alert("You must enter a number!")
+            }           
+            else {
+            f=  (9/5 * number) + 32 ;
+            document.forms["myform"].elements["result"].value = (number + " Celsius " + " = " + f + " Farenheit");
+            }
+        }
+        //Change F to C
+        function FtC(){
+            var number, c;
+            number = document.forms["myform"].elements["num"].value;
+            n = parseFloat(number);
+            if (number == '' || isNaN(number)){
+                alert("You must enter a number!")
+            }           
+            else {
+            c= 5/9 * (number - 32);
+            document.forms["myform"].elements["result"].value = (number + " Farenheit " + " = " + c + " Celsius");
+            }
+        }
+    </script>
+    <title>Homework 3 - Part 3</title>
+</head>
+<body>
+    <form name="myform">
+        <table>
+        <tr>
+        <td>Enter a number:</td>
+        <td><input type="text" name="num"></td>
+        </tr>
+        </table>
+        <br><br>
+        <input type="button" onclick="CtF()" value="C to F">
+        <input type="button" onclick="FtC()" value="F to C">
+        <br> Results:
+        <br>
+        <textarea name="result" cols="20" rows="5" disabled="disabled"></textarea>    
+</body>
+</html>
