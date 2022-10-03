@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 3 - Part 2</title>
+    <script>
+        var item1, item2, item3, item4, total1 = 0, total2 = 0, total3 =0, total4 =0, totalS =0
+
+        document.write("<strong>Input the number of items sold for each item number:</strong><br />");
+        document.write("<form name='myforms'>");
+        document.write("<table border = \"1\">")
+        document.write("<tr><td>Item 1</td><td><input type= \"text\" name =\"I1\" ></td></tr>");
+        document.write("<tr><td>Item 2</td><td><input type= \"text\" name =\"I2\" ></td></tr>");
+        document.write("<tr><td>Item 3</td><td><input type= \"text\" name =\"I3\" ></td></tr>");
+        document.write("<tr><td>Item 4</td><td><input type= \"text\" name =\"I4\" ></td></tr>");
+        document.write("</table><br />")
+        document.write("<input type=\"button\" value='Submit' onclick=\"sell()\">"); 
+        document.write("<input type= \"reset\" value= \"RESET\">")
+        document.write("<div align=\"center\">");
+        document.write("<table border = \"1\"")
+        document.write("<tr><th>Item #</th><th>Price</th><th>Number items</th><th>Total</th></tr>")
+        document.write("<tr><th>1</th><th>$239.99</th><th><input type = \"text\" name =\"item1\"></th><th><input type = \"text\" name =\"total1\"></th></tr>")
+        document.write("<tr><th>2</th><th>$129.75</th><th><input type = \"text\" name =\"item2\"></th><th><input type = \"text\" name =\"total2\"></th></tr>")
+        document.write("<tr><th>3</th><th>$99.95</th><th><input type = \"text\" name =\"item3\"></th><th><input type = \"text\" name =\"total3\"></th></tr>")
+        document.write("<tr><th>4</th><th>$350.89</th><th><input type = \"text\" name =\"item4\"></th><th><input type = \"text\" name =\"total4\"></th></tr>")
+        document.write("<tr></tr>")
+        document.write("</table><br />")
+        //Total amount sold and earnings
+        document.write("<tr><th>Total amount sold </th><th><input type = \"text\" name =\"TotalI\"></th></tr><br /><br />")
+        document.write("<tr><th>Total Weekly earnings </th><th><input type = \"text\" name =\"TotalS\"></th></tr>")
+        document.write("</form>");
+        document.write("</div>");
+
+        function sell(){
+            
+            var I1, I2, I3, I4, totalI;
+            i1 = parseInt(document.forms["myforms"].elements["I1"].value);
+            i2 = parseInt(document.forms["myforms"].elements["I2"].value);
+            i3 = parseInt(document.forms["myforms"].elements["I3"].value);
+            i4 = parseInt(document.forms["myforms"].elements["I4"].value);
+            //Check positive numbers
+            if(i1<0 || i2<0 || i3<0 || i4<0){
+                alert("You should enter positive number(s)")
+            }
+            else if(isNaN(i1) || isNaN(i2) || isNaN(i3) || isNaN(i4)){
+                alert("You should enter number(s)!")
+            }
+            else{
+            //Total items sold
+            totalI = i1 + i2 + i3 + i4;
+
+            I1 = i1;
+            I2 = i2;
+            I3 = i3;
+            I4 = i4;
+            
+            document.forms["myforms"].elements["item1"].value = I1;
+            document.forms["myforms"].elements["item2"].value = I2;
+            document.forms["myforms"].elements["item3"].value = I3;
+            document.forms["myforms"].elements["item4"].value = I4;
+
+            total1 = i1*239.99;
+            total2 = i2*129.75;
+            total3 = i3*99.95;
+            total4 = i4*350.89;
+            //Total earnings   
+            totalS = total1 + total2 + total3 + total4;
+
+            document.forms["myforms"].elements["total1"].value = total1.toFixed(2);
+            document.forms["myforms"].elements["total2"].value = total2.toFixed(2);
+            document.forms["myforms"].elements["total3"].value = total3.toFixed(2);
+            document.forms["myforms"].elements["total4"].value = total4.toFixed(2);
+
+            document.forms["myforms"].elements["TotalS"].value = totalS.toFixed(2);
+            document.forms["myforms"].elements["TotalI"].value = totalI;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
