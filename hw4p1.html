@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Homework 4 - Part 1</title>
+   
+</head>
+<body>
+    <h3>Using loop FOR</h3>
+    <p id ="sum"></p>
+    <p id ="product"></p>
+    <br>
+    <h3>Using Do - While</h3>
+    <p id ="sum1"></p>
+    <p id ="product1"></p>
+    <script>
+      
+        var sum = 0;
+           for ( var number = 5; number <= 21; number += 4 ) {
+                sum += number;
+            }
+            document.getElementById("sum").innerHTML= "5 + 9 + 13 + 17 + 21 = " + sum;
+        var product = 1;
+           for ( var number = 5; number <= 21; number += 4 ) {
+                product = product * number;
+            }
+            document.getElementById("product").innerHTML= "5 * 9 * 13 * 17 * 21 = " + product;
+           
+        var sum1=0;
+        var number1=5;
+        do{
+            sum1+= number1;
+            number1+=4;
+        }
+        while(number1<=21)
+        document.getElementById("sum1").innerHTML= "5 + 9 + 13 + 17 + 21 = " + sum1;
+        var product1=1;
+        var number2=5;
+        do{
+            product1*= number2;
+            number2+=4;
+        }
+        while(number2<=21);
+        document.getElementById("product1").innerHTML= "5 * 9 * 13 * 17 * 21 = " + product1;
+        
+        
+    </script>
+</body>
+</html>
