@@ -39,12 +39,12 @@ th, td{
 #table2{
         position: relative;
         left: 500px;
-        top: -240px;
+        top: -320px;
        }
 #table3{
         position: relative;
         left: 1000px;
-        top: -680px;
+        top: -640px;
        }
 .navbar{
     /* background: red; */
