@@ -23,6 +23,29 @@ h1{
     height: 120px;
     padding-top: 40px;
 }
+table{
+            border-collapse: collapse;
+            padding: 20px;
+        }
+th, td{
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        th{
+            background-color: maroon;
+            color: aliceblue;
+        }
+#table2{
+        position: relative;
+        left: 500px;
+        top: -240px;
+       }
+#table3{
+        position: relative;
+        left: 1000px;
+        top: -680px;
+       }
 .navbar{
     /* background: red; */
     /* display: grid; */
