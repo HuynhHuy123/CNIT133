@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function newPage1() {
+        var myMenu1 = myForm1.menu1.options[myForm1.menu1.selectedIndex].value;
+        window.location = myMenu1;
+    }
+        function newPage2() {
+        var myMenu2 = myForm2.menu2.options[myForm2.menu2.selectedIndex].value;
+        window.location = myMenu2;
+    }
+    </script>
+</head>
+<body>
+    <form name="myForm1">
+        <h3>Using onChange for Fulldown menu</h3>
+        
+        <select name="menu1" onchange="newPage1();">
+        <option>Choose Destination:</option>
+        <option value="https://www.w3schools.com">WSchools</option>
+        <option value="https://www.codecademy.com">Codecademy</option>
+        <option value="https://www.ccsf.edu">CCSF</option>
+        </select>
+    </form>
+    <form name="myForm2">
+        <h3>Using onChange for Fulldown menu</h3>
+        
+        <select name="menu2">
+        <option>Choose Destination:</option>
+        <option value="https://www.w3schools.com">WSchools</option>
+        <option value="https://www.codecademy.com">Codecademy</option>
+        <option value="https://www.ccsf.edu">CCSF</option>
+        </select>
+        <input type="button" value="Submit" onclick="newPage2();">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+       var stateArray = [ ["AL", "ALABAMA", "Montgomery", "4,887,871"],                     
+                        ["AK", "ALASKA", "Juneau", "737,438"],  
+                        ["AZ", "ARIZONA", "Phoenix", "7,171,646"],
+                        ["AR", "ARKANSAS", "Little Rock", "3,010,825"],    
+                        ["CA", "CALIFORNIA", "Sacramento", "39,557,045"],    
+                        ["CO", "COLORADO", "Denver", "5,694,564"] ];    
+
+function ButtonPressed()
+  {   
+    var searchKey = document.forms["SearchForm"].elements["inputState"].value;  
+    searchKey = searchKey.toUpperCase();    
+    
+    var found = false;
+    for (var row = 0; row < stateArray.length; row++)
+     {
+     if (stateArray[row][0] == searchKey  || stateArray[row][1] == searchKey)
+     {
+       document.forms["SearchForm"].elements["abbr"].value = stateArray[row][0];
+       document.forms["SearchForm"].elements["name"].value = stateArray[row][1];
+       document.forms["SearchForm"].elements["capital"].value = stateArray[row][2];
+       document.forms["SearchForm"].elements["population"].value = stateArray[row][3];  
+       row = stateArray.length;  
+       found = true;
+     }
+    }
+
+    if ( found == false ) {
+        document.forms["SearchForm"].elements["comment"].value= "The state is not found!"; 
+    }
+}
+
+
+    </script>
+        
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>State Abbr</th>
+            <th>State Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+        </tr>
+        <tr>
+            <td>AL</td>	
+            <td>Alabama</td>	
+            <td>Montgomery</td>		
+            <td>4,887,871</td>	
+        </tr>
+        
+        <tr>
+        <td>AK</td>	
+            <td>Alaska</td>	
+            <td>Juneau</td>		
+            <td>737,438</td>	
+        </tr>
+        
+        <tr>
+            <td>AZ</td>	
+            <td>Arizona</td>	
+            <td>Phoenix</td>		
+            <td>7,171,646</td>	
+        </tr>
+        
+        <tr>
+            <td>AR</td>	
+            <td>Arkansas</td>	
+            <td>Little Rock</td>		
+            <td>3,010,825</td>	
+        </tr>
+        <tr>
+            <td>CA</td>	
+            <td>California</td>	
+            <td>Sacramento</td>		
+            <td>39,557,045</td>	
+        </tr>
+        <tr>
+            <td>CO</td>	
+            <td>Colorado</td>	
+            <td>Denver</td>		
+            <td>5,694,564</td>	
+        </tr>
+        </table>
+    <form name="SearchForm">
+        <form name="SearchForm">
+            <input type="text" size="15" name="inputState" autofocus> 
+            <input onclick="ButtonPressed();" type="button" value="State Information" name="search" id="search">
+            
+            <br><br>
+            <h3>Thanks for your inquiry, here is the information you requested:</h3>
+            <br>
+            <p>State abbr: <input type="text" size="10" name="abbr" id="abbr"><br></p>
+            <p>Name: <input type="text" size="10" name="name" id="name"><br></p>
+            <p>Capital: <input type="text" size="10" name="capital" id="capital"><br></p>
+            <p>Population: <input type="text" size="10" name="population" id="population"><br></p>
+            <h3>Comment:</h3>
+            <br>
+            <input type="text" size="20" name="comment" id="comment"><br><br>
+            <input type="reset" value="Reset" onclick="location.reload();">
+            </form>
+    </form>
+    
+</body>
+</html>

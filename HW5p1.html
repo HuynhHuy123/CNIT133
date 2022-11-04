@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function valNote(){
+            var x=0;
+            var note = document.getElementById("note").value;
+            if (note == "" || note == null){
+                document.getElementById("msg1").innerHTML = "Enter your note";
+                x=1;
+            }
+            else{
+                document.getElementById("msg1").innerHTML = "Your note is valid";
+            }
+            var rateChecked = false;
+
+            for (var i=0; i<4; ++i) {
+            if (document.myform.rating[i].checked) {
+            rateChecked = true;
+            break;
+            }
+            }
+
+            if (rateChecked == false) {
+            document.getElementById("msg2").innerHTML = "<br>Check a rate"; 
+            }
+            else    {
+            document.getElementById("msg2").innerHTML = "<br>Rate checked is valid";
+           }
+           var selstat = document.forms["myform"].elements["status"].selectedIndex;
+
+    if (selstat < 1)  
+    {
+      document.getElementById("msg3").innerHTML = "<br>Select an occupation";
+    }
+    else
+    {
+      document.getElementById("msg3").innerHTML = "<br>Option selected is valid"; 
+    }
+
+    if(!form.rice.checked){
+      document.getElementById("msg4").innerHTML = "<br>OK";
+      form.ice.focus();
+      return false;
+    }
+    return true;
+   
+
+    
+
+  }
+    </script>
+    <title>Homework 5 Part 1</title>
+</head>
+<body>
+    <form id="myform" name="myform">
+        
+
+            <span style="color: blue">What kind of soup do you want?</span>
+            <select name="status">
+                <option value=" ">-Choose one-</option>
+                <option value="seafood">Seafood</option>
+                <option value="beef">Beef</option>
+                <option value="chicken">Chicken</option>
+            </select>
+            <div id="msg3"></div>
+            <br>
+            <table>
+                <tr>
+                    <td><input type="radio" name="rating">Not spicy</td>
+                    <td><input type="radio" name="rating">Middum</td>
+                    <td><input type="radio" name="rating">Spicy</td>
+                    <td><input type="radio" name="rating">Very spicy</td>
+                </tr>
+            </table>
+            <div id="msg2"></div>
+            <br>
+            <p>Add item: </p>
+            <input type="checkbox" id="rice" name="rice" value="rice">Rice<br>
+            <div id="msg4"></div>
+            <p>Do you want to note something?</p>
+            <input type="text" name="note" id="note" size="30">
+            <br>
+            <div id="msg1"></div>
+            <br>
+            <input type="button"  onclick="valNote(this.form)" value="SUBMIT">
+            <input type="reset" value="RESET" onclick="window.location.reload();">
+
+    </form>
+</body>
+</html>
