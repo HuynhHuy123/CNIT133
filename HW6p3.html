@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function checkFormat(){
+            var errorMsg = "Invalid phone #";
+            var phoneNumber = document.forms["myForm"].elements["input"].value;
+                phoneRegExp = /^(\()(\d{3})(\))(\s)(\d{3})(-\d{4})$/;
+            
+                if(!phoneRegExp.test(phoneNumber)){
+                    document.getElementById("Msg").innerHTML = "You should follow exacly this format (999) 999-9999<br>where each 9 represents a number";
+
+                }
+                else{
+                    document.getElementById("Msg").innerHTML = "Your phone number is valid!";
+                }
+            }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Check phone number format</h2>
+    <form name="myForm">
+        <p>Enter your phone number [in the form (999) 999-9999</p>
+        <input type="text" name="input" id="input" size="20" autofocus> 
+        <br><br>
+        <input type="button" value="Submit" onclick="checkFormat()">
+        <input type="reset" value="Reset" onClick="window.location.reload();">
+        <br><br>
+        <div id="Msg"></div>
+
+    </form>
+</body>
+</html>

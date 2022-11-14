@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #err{
+            color: red;
+
+        }
+    </style>
+    <title>Homework 2 - Part 3</title>
+    <script>
+        function roundNum(){
+            var numberEnter = new RegExp("^[0-9]{1,11}\.[0-9]{4,}$");
+            var errorMsg = "Your must enter a number at least 4 decimals.";
+            //Check error
+            if((document.getElementById("num").value) == "" || (!(numberEnter.test(document.getElementById("num").value))))
+            {
+                document.getElementById("err").innerHTML = errorMsg;
+                document.getElementById("out").value = "";
+
+                }
+            else {
+                var number = parseFloat(document.getElementById("num").value);
+                document.myForm.out.value = 
+                    "Your number is " + number + "\n round the floating-point number to the nearest integer: " + roundToInterRound(number) + 
+                    "\n round the floating-point number to the nearest tenths position " + roundToTenthsRound(number) +
+                    "\n round the floating-point number to the nearest Hundered position " + roundToHunderedRound(number) +
+                    "\n round the floating-point number to the nearest Thoundsand position " + roundToThoundsandRound(number) +
+                    "\n round the floating-point number to the nearest tenths position " + sqrt(number)
+                }
+            }
+        function roundToInterRound(num){
+            return  (Math.round(num));
+
+        }
+        function roundToTenthsRound(num){
+            return  (Math.round(num * 10)/10);
+
+        }
+        function roundToHunderedRound(num){
+            return  (Math.round(num * 100)/100);
+
+        }
+        function roundToThoundsandRound(num){
+            return  (Math.round(num * 1000)/1000);
+
+        }
+        function sqrt(num){
+            return (Math.round(Math.sqrt(num)))
+        }
+        function res(){
+            document.getElementById("err").innerHTML ="";
+            document.getElementById("num").focus();
+        }
+
+       
+        
+
+        
+    </script>
+</head>
+<body>
+    <h2>Count negative number, positive number and zero number.</h2>
+    
+    <div id="err"></div>
+    <br>
+    <form name="myForm">
+        <label for="number">Enter a number at least 4 decimal positions</label>: <br>
+        <input type="number" id="num">
+        <input type="button" value="Results" onclick="roundNum()"><br><br>
+        <textarea name="out" id="out" cols="60" rows="10" readonly></textarea><br><br>
+        <input type="reset" value="Reset" onclick="res();">
+    </form>
+</body>
+</html>

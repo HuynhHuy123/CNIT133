@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function searchCharacter()
+         {
+            var countCharacter = 0;
+            var notFound = null
+            
+            var searchKey= document.getElementById("searchKey").value.toLowerCase().charAt( 0 );
+             var searchKey= searchKey.toLowerCase();
+
+            var string ="This time";
+            var string =string.toLowerCase(); 
+  
+                        
+             for (i=0; i < string.length; i++)
+                     {
+
+                    if (string.charAt(i) == searchKey)
+                             countCharacter++;     
+                     }         
+      
+            if ( countCharacter == 0 )
+            //    document.getElementById("output").value=key + " not found";
+            notFound = window.open("http://127.0.0.1:5500/notFound.html", "Not found")
+            else
+               document.getElementById("out").value=countCharacter + 
+                  " occurrence(s) of " + searchKey + " found";
+         }
+    </script>
+</head>
+<body>
+    <h2>Count character</h2>
+    <form name="myForm">
+         
+        <p>Enter a character you want to find</p>
+           <input id="searchKey" type="text">
+           <input type="button" value="Search" onclick="searchCharacter();">
+            <input type="reset" value="Reset" onClick="location.reload();">
+
+        <br><br>
+        
+            Occurrences of search character in This time:
+           <textarea cols="30" rows="1" id="out"></textarea>
+        </p>
+     </form>
+</body>
+</html>
