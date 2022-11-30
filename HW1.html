@@ -6,16 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <title>CNIT 133 Homework</title>
+    <script>
+        $(document).ready(function(){
+        $('.navbar li ul').hide().removeClass('dropdown');
+        $('.navbar li').hover(
+          function () {
+            $('ul', this).stop().slideDown(100);
+          },
+          function () {
+            $('ul', this).stop().slideUp(100);
+          }
+        );
+        });
+    </script>
 </head>
 <body>
     <h1>CNIT 133 Homework</h1>
     <div class="navbar">
         <ul>
-            <li><a href="/HW2.html">Homework 2</a></li>
-            <li><a href="/HW3.html">Homework 3</a></li>
-            <li><a href="/HW4.html">Homework 4</a></li>
-            <li><a href="/HW5.html">Homework 5</a></li>
-            <li><a href="/HW6.html">Homework 6</a></li>
+            <li>
+                <a href="/HW2.html">Homework 2</a>
+                <ul class="dropdown">
+                    <li><a href="/HW2p1.html">Part 1</a></li>
+                    <li><a href="/HW2p2.html">Part 2</a></li>
+                    <li><a href="/HW2p3.html">Part 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/HW3.html">Homework 3</a>
+                <ul class="dropdown">
+                    <li><a href="/HW3p1.html">Part 1</a></li>
+                    <li><a href="/HW3p2.html">Part 2</a></li>
+                    <li><a href="/HW3p3.html">Part 3</a></li>
+                    <li><a href="/HW3p4.html">Part 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/HW4.html">Homework 4</a>
+                <ul class="dropdown">
+                    <li><a href="/HW4p1.html">Part 1</a></li>
+                    <li><a href="/HW4p2.html">Part 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/HW5.html">Homework 5</a>
+                <ul class="dropdown">
+                    <li><a href="/HW2p1.html">Part 1</a></li>
+                    <li><a href="/HW2p2.html">Part 2</a></li>
+                    <li><a href="/HW2p3.html">Part 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/HW6.html">Homework 6</a>
+                <ul class="dropdown">
+                    <li><a href="/HW2p1.html">Part 1</a></li>
+                    <li><a href="/HW2p2.html">Part 2</a></li>
+                    <li><a href="/HW2p3.html">Part 3</a></li>
+                </ul>
+            </li>
             <li><a href="/HW7.html">Homework 7</a></li>
             <li><a href="/HW8.html">Homework 8</a></li>
         </ul>
