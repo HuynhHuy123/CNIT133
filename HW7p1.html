@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style2.css">
+    <script>
+        function color(x){
+            var a = getComputedStyle(x);
+            var b = a.backgroundColor;
+            document.getElementsByTagName("body")[0].style.backgroundColor=b;
+        }
+        function fontsize(y){
+            var c = getComputedStyle(y);
+            var d = c.fontSize;
+            document.getElementsByTagName("body")[0].style.fontSize=d;
+
+        }
+        function fontFamily(z){
+            var e = getComputedStyle(z);
+            var f = e.fontSize;
+            document.getElementsByTagName("body")[0].style.fontSize=f;
+        }
+        function selectFontFamily()
+        {      
+            var origTableObject = document.getElementById("originalTable");    
+            var selectedFontFamily = document.getElementById('fontSizeDropDown').value;
+            
+            if (selectedFontFamily == "courier")
+            {
+                origTableObject.className = "courier basicTable";
+            }
+            else if (selectedFontFamily == "arial")
+            {
+                origTableObject.className = "arial basicTable";
+            }
+            else if (selectedFontFamily == "trebuchet")
+            {
+                origTableObject.className = "trebuchet basicTable";
+            }           
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body class="basicTable" id="originalTable">
+    <p>Change background color</p>
+    <br>
+    <div class="container">
+        
+        <button id="1" onclick="color(this)" class="color clr1"></button>
+        <button id="2" onclick="color(this)" class="color clr2"></button>
+        <button id="3" onclick="color(this)" class="color clr3"></button>
+        <button id="4" onclick="color(this)" class="color clr4"></button>
+    </div>
+    <br>
+    <p>Change font size</p>
+    <br>
+    <div class="fontsize">
+        <input type="radio" name="fstyle" onclick="fontsize(this)" class="s1"> 20px
+        <br>
+        <input type="radio" name="fstyle" onclick="fontsize(this)" class="s2"> 60px
+    </div>
+    <br>
+    <p>Select font Family</p>
+    <br>
+    <select name="fontSizeDropDown" id="fontSizeDropDown" onchange="selectFontFamily()">
+        <option  value="#">--Select font size--</option> 
+        <option value="courier">Courier New</option>                         
+        <option value="arial">Arial</option>                        
+        <option value="trebuchet">Trebuchet MS</option>       
+    </section>
+    
+</body>
+</html>
