@@ -88,28 +88,6 @@ th, td{
 .navbar ul li ul.dropdown {
     display:none;
 }
-.navbar ul li:hover ul.dropdown {
-    display:block;
-}
-@media screen and (max-width: 700px) {
-    .navbar ul{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* padding: 15px; */
-        /* font-size: 18px; */
-        gap: 10px;
-    }
-    .navbar a{
-        font-size: 18px;
-    }
-    h1{
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 200px;
-    }
-    
-}
 .color{
     display: table-cell;
     width: 50px;
@@ -146,6 +124,29 @@ th, td{
 .trebuchet {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.navbar ul li:hover ul.dropdown {
+    display:block;
+}
+@media screen and (max-width: 700px) {
+    .navbar ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* padding: 15px; */
+        /* font-size: 18px; */
+        gap: 10px;
+    }
+    .navbar a{
+        font-size: 18px;
+    }
+    h1{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 200px;
+    }
+    
+}
+
 @media screen and (min-width: 700px) and (max-width: 1000px) {
     .navbar ul{
         display: grid;
